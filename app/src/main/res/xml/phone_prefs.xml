@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.wubydax.romcontrol.prefs.ColorPickerPreference
-        android:key="dialer_num_color"
-        android:title="Choose Dialer Num Color"
-        android:defaultValue="#0000ff"
-        alphaSlider="true"/>
-    <SwitchPreference
-        android:defaultValue="true"
-        android:key="call_recording"
-        android:summaryOff="Call recording disabled"
-        android:summaryOn="Callrecording enabled"
-        android:title="Enable/Disable Call Recording" />
-    <com.wubydax.romcontrol.prefs.MyListPreference
-        android:defaultValue="2"
-        android:entries="@array/some_entries"
-        android:entryValues="@array/some_values"
-        android:key="some_position"
-        android:title="Some Position" />
+    <PreferenceScreen
+        android:title="XDA Forum Thread">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="http://forum.xda-developers.com/galaxy-s6-edge/development/rom-crisscross-rom-goes-marshmallow-v1-0-t3310503" />
+    </PreferenceScreen>
+    <PreferenceScreen
+        android:title="Download Area">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://goo.gl/pqmFRS" />
+    </PreferenceScreen>
+    <PreferenceScreen
+        android:title="Donate ASC1977">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://goo.gl/3GHekF" />
+    </PreferenceScreen>
 </PreferenceScreen>
