@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android">
-    <PreferenceCategory android:layout="@layout/preferences_category" android:title="Statusbar Mods" />
     <PreferenceCategory android:title="Networkspeed">
         <SwitchPreference android:title="Internet" android:key="tweaks_speed_view" android:summaryOn="Show" android:summaryOff="Hide" />
         <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Download speed color" android:key="tweaks_speed_color_download" android:summary="Choose download speed color" android:defaultValue="\#ffffffff" alphaSlider="true" hexValue="true" />
