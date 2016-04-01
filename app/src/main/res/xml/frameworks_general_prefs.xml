@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-
+    <PreferenceScreen
+        android:title="XDA Forum Thread">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="http://forum.xda-developers.com/galaxy-s6-edge/development/rom-crisscross-rom-goes-marshmallow-v1-0-t3310503" />
+    </PreferenceScreen>
+    <PreferenceScreen
+        android:title="Download Area">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://goo.gl/pqmFRS" />
+    </PreferenceScreen>
+    <PreferenceScreen
+        android:title="Donate ASC1977">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://goo.gl/3GHekF" />
+    </PreferenceScreen>
 </PreferenceScreen>

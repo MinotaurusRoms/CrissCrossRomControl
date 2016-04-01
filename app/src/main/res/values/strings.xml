@@ -5,6 +5,7 @@
     <string name="action_settings">Settings</string>
     <string-array name="nav_drawer_items">
         <item>CrissCross Statusbar Settings</item>
+        <item>Phone Settings</item>
         <item>Useful Links</item>
     </string-array>
     <string-array name="clock_position_entries">
