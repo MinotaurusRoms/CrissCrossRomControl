@@ -115,6 +115,18 @@ public class HandlePreferenceFragments implements SharedPreferences.OnSharedPref
         PreferenceScreen ps = (PreferenceScreen) p;
         ps.setOnPreferenceClickListener(this);
 
+        if(ps.getIntent()!=null){
+            Intent intent = ps.getIntent();
+            try {
+                Drawable iconFromIntent = c.getPackageManager().getActivityIcon(intent);
+                ps.setIcon(iconFromIntent);
+            } catch (PackageManager.NameNotFoundException e) {
+                Map<Preference, PreferenceScreen> preferenceParentTree = buildPreferenceParentTree();
+                PreferenceScreen preferenceParent = preferenceParentTree.get(ps);
+                preferenceParent.removePreference(ps);
+            }
+        }
+
             /*Initiate icon view for preferences with keys that are interpreted as Intent
             *For more info see OnPreferenceClick method*/
         if (ps.getKey() != null) {
@@ -413,8 +425,9 @@ public class HandlePreferenceFragments implements SharedPreferences.OnSharedPref
                 Toast.makeText(c, "App not installed or intent not valid", Toast.LENGTH_SHORT).show();
             }
 
-        } else if (preference.getKey() == null) {
-//            setToolbarForNested(preference);
+        } else if (preference.getKey() == null && preference.getIntent()!=null) {
+            Intent intentFromPreference = preference.getIntent();
+            c.startActivity(intentFromPreference);
         }
         return true;
     }
