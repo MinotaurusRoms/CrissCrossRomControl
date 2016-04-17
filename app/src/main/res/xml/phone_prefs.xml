@@ -4,4 +4,7 @@
         <SwitchPreference android:title="Incoming auto call record" android:key="auto_call_record_in" android:defaultValue="false" android:summaryOn="Enabled" android:summaryOff="Disabled" />
         <SwitchPreference android:title="Outgoing auto call record" android:key="auto_call_record_out" android:defaultValue="false" android:summaryOn="Enabled" android:summaryOff="Disabled" />
     </PreferenceCategory>
+    <PreferenceCategory android:title="Reboot Menue">
+        <SwitchPreference android:title="Emergency Mode" android:key="power_emergency" android:defaultValue="false" android:summaryOn="Emergency mode will be shown" android:summaryOff="Currently removed" />
+    </PreferenceCategory>
 </PreferenceScreen>
