@@ -10,4 +10,10 @@
     <PreferenceCategory android:title="Notification colors">
         <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Notification Panel background color" android:key="notification_background_color" android:summary="Needs UI restart" android:defaultValue="\#ff000000" alphaSlider="true" hexValue="true" />
     </PreferenceCategory>
+    <PreferenceCategory android:title="Lockscreen">
+        <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Text Color hours" android:key="kg_clock_hours_color" android:summary="Choose a color" android:defaultValue="\#ffffffff" alphaSlider="false" />
+        <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Text Color minutes" android:key="kg_clock_minutes_color" android:summary="Choose a color" android:defaultValue="\#ffffffff" alphaSlider="false" />
+        <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Text Color seconds Hours" android:key="kg_clock_second_color" android:summary="Choose a color" android:defaultValue="\#ffffffff" alphaSlider="false" />
+        <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="The color of the date text" android:key="kg_date_color" android:summary="Choose a color" android:defaultValue="\#ffffffff" alphaSlider="false" />
+    </PreferenceCategory>
 </PreferenceScreen>
