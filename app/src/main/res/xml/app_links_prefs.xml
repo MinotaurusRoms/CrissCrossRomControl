@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-
+    <PreferenceCategory android:title="Networkspeed">
+        <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Download speed color" android:key="tweaks_speed_color_download" android:summary="Choose download speed color" android:defaultValue="\#ffffffff" alphaSlider="true" hexValue="true" />
+        <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Upload speed color" android:key="tweaks_speed_color_upload" android:summary="Choose upload speed color" android:defaultValue="\#ffffffff" alphaSlider="true" hexValue="true" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Expanded view colors">
+        <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Expanded view bg color" android:key="expanded_view_bg_color" android:summary="Needs UI restart" android:defaultValue="\#ff000000" alphaSlider="true" hexValue="true" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Notification colors">
+        <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Notification Panel background color" android:key="notification_background_color" android:summary="Needs UI restart" android:defaultValue="\#ff000000" alphaSlider="true" hexValue="true" />
+    </PreferenceCategory>
 </PreferenceScreen>

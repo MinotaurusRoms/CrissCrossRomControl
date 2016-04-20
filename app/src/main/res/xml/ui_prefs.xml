@@ -3,8 +3,6 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
     <PreferenceCategory android:title="Networkspeed">
         <SwitchPreference android:title="Internet" android:key="tweaks_speed_view" android:summaryOn="Show" android:summaryOff="Hide" />
-        <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Download speed color" android:key="tweaks_speed_color_download" android:summary="Choose download speed color" android:defaultValue="\#ffffffff" alphaSlider="true" hexValue="true" />
-        <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Upload speed color" android:key="tweaks_speed_color_upload" android:summary="Choose upload speed color" android:defaultValue="\#ffffffff" alphaSlider="true" hexValue="true" />
     </PreferenceCategory>
     <PreferenceCategory android:title="Potato Mods">
         <PreferenceScreen android:title="Gradient Statusbar" android:key="com.potato.gradientapp.MainActivity" android:summary="Set Statusbar Color" />

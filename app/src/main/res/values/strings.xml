@@ -7,6 +7,7 @@
         <item>CrissCross Statusbar Settings</item>
         <item>Phone Settings</item>
         <item>Useful Links</item>
+        <item>Rom Colors</item>
     </string-array>
     <string-array name="clock_position_entries">
         <item>Right clock</item>
