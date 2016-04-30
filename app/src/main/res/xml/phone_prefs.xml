@@ -10,4 +10,8 @@
     <PreferenceCategory android:title="Lockscreen">
         <SwitchPreference android:title="Show seconds in hours" android:key="lock_seconds" android:defaultValue="0" android:summaryOn="Show" android:summaryOff="Hide" />
     </PreferenceCategory>
+    <PreferenceCategory android:title="Quickpanel">
+        <SwitchPreference android:title="Single swipe for Quickpanel" android:key="tweaks_qs_pulldown" android:defaultValue="true" android:summaryOn="Feature is enabled"
+            android:summaryOff="Feature is disabled" />
+    </PreferenceCategory>
 </PreferenceScreen>
