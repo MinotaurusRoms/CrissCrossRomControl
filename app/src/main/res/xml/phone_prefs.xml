@@ -11,7 +11,7 @@
         <SwitchPreference android:title="Show seconds in hours" android:key="lock_seconds" android:defaultValue="0" android:summaryOn="Show" android:summaryOff="Hide" />
         <com.wubydax.romcontrol.prefs.MyListPreference
             android:entries="@array/lockscreen_notif_entries"
-            android:title="Notifications Shown on Lockscreen(UI restart)"
+            android:title="Notifications Shown on Lockscreen"
             android:key="lockscreen_notifications"
             android:defaultValue="2"
             android:summary="Number shown on lockscreen"
