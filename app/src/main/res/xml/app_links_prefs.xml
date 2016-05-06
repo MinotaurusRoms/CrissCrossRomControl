@@ -5,7 +5,8 @@
         <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Upload speed color" android:key="tweaks_speed_color_upload" android:summary="Choose upload speed color" android:defaultValue="\#ffffffff" alphaSlider="true" hexValue="true" />
     </PreferenceCategory>
     <PreferenceCategory android:title="Expanded view colors">
-        <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Expanded view bg color" android:key="expanded_view_bg_color" android:summary="Needs UI restart" android:defaultValue="\#ffffffff" alphaSlider="true" hexValue="true" />
+        <SwitchPreference android:title="On/Off colors" android:key="link_colors" android:summaryOn="enabled" android:summaryOff="disabled" />
+        <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Expanded view bg color" android:key="expanded_view_bg_color" android:summary="Choose expanded view color" android:defaultValue="\#ffffffff" alphaSlider="true" hexValue="true" />
     </PreferenceCategory>
     <PreferenceCategory android:title="Notification colors">
         <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Notification Panel background color" android:key="notification_background_color" android:summary="Needs UI restart" android:defaultValue="\#ffffffff" alphaSlider="true" hexValue="true" />
