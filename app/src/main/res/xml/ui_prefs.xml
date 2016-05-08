@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android">
-    <PreferenceCategory android:title="Networkspeed">
-        <SwitchPreference android:title="Internet" android:key="tweaks_speed_view" android:summaryOn="Show" android:summaryOff="Hide" />
-    </PreferenceCategory>
-    <PreferenceCategory android:title="Potato Mods">
-        <PreferenceScreen android:title="Gradient Statusbar" android:key="com.potato.gradientapp.MainActivity" android:summary="Set Statusbar Color" />
-        <PreferenceScreen android:title="Statusbar Clock" android:key="com.potato.clock.main.Main" android:summary="Customize Clock" />
-    </PreferenceCategory>
-        <PreferenceCategory android:title="Battery Mods">
+    <PreferenceCategory android:title="Battery Mods">
+        <SwitchPreference android:title="Stock Battery" android:key="hide_battery_stock" android:defaultValue="true" android:summaryOn="Show" android:summaryOff="Hide" />
+        <SwitchPreference android:title="3Minit Battery(need some seconds)" android:key="minit_battery_visible" android:defaultValue="true" android:summaryOn="Show" android:summaryOff="Hide" />
         <PreferenceScreen
+            android:dependency="minit_battery_visible"
             android:summary="Custom battery chooser"
             android:title="3Minit Battery Mod">
             <intent
@@ -17,5 +13,14 @@
                 android:targetPackage="com.three.minit.minitbatterysettings.free"
                 android:action="android.intent.action.MAIN" />
         </PreferenceScreen>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Networkspeed">
+        <SwitchPreference android:title="Internetspeed" android:key="tweaks_speed_view" android:summaryOn="Show" android:summaryOff="Hide" />
+            <com.wubydax.romcontrol.prefs.ColorPickerPreference android:dependency="tweaks_speed_view" android:title="Download speed color" android:key="tweaks_speed_color_download" android:summary="Choose download speed color" android:defaultValue="\#ffffffff" alphaSlider="true" hexValue="true" />
+            <com.wubydax.romcontrol.prefs.ColorPickerPreference android:dependency="tweaks_speed_view" android:title="Upload speed color" android:key="tweaks_speed_color_upload" android:summary="Choose upload speed color" android:defaultValue="\#ffffffff" alphaSlider="true" hexValue="true" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Potato Mods">
+        <PreferenceScreen android:title="Gradient Statusbar" android:key="com.potato.gradientapp.MainActivity" android:summary="Set Statusbar Color" />
+        <PreferenceScreen android:title="Statusbar Clock" android:key="com.potato.clock.main.Main" android:summary="Customize Clock" />
     </PreferenceCategory>
 </PreferenceScreen>

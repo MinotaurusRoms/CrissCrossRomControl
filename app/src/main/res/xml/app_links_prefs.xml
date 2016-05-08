@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-    <PreferenceCategory android:title="Networkspeed">
-        <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Download speed color" android:key="tweaks_speed_color_download" android:summary="Choose download speed color" android:defaultValue="\#ffffffff" alphaSlider="true" hexValue="true" />
-        <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Upload speed color" android:key="tweaks_speed_color_upload" android:summary="Choose upload speed color" android:defaultValue="\#ffffffff" alphaSlider="true" hexValue="true" />
-    </PreferenceCategory>
     <PreferenceCategory android:title="Expanded view colors">
         <SwitchPreference android:title="On/Off colors" android:key="link_colors" android:summaryOn="enabled" android:summaryOff="disabled" />
-        <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Expanded view bg color" android:key="expanded_view_bg_color" android:summary="Choose expanded view color" android:defaultValue="\#ffffffff" alphaSlider="true" hexValue="true" />
+        <com.wubydax.romcontrol.prefs.ColorPickerPreference android:dependency="link_colors" android:title="Expanded view bg color" android:key="expanded_view_bg_color" android:summary="Choose expanded view background color" android:defaultValue="\#ffffffff" alphaSlider="true" hexValue="true" />
+        <com.wubydax.romcontrol.prefs.ColorPickerPreference android:dependency="link_colors" android:title="Expanded view header icon color" android:key="expand_header_icon_color" android:summary="Choose expanded view header icon color" android:defaultValue="\#ffffffff" alphaSlider="true" hexValue="true" />
     </PreferenceCategory>
     <PreferenceCategory android:title="Notification colors">
         <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Notification Panel background color" android:key="notification_background_color" android:summary="Needs UI restart" android:defaultValue="\#ffffffff" alphaSlider="true" hexValue="true" />
