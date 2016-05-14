@@ -308,6 +308,30 @@ public class HandlePreferenceFragments implements SharedPreferences.OnSharedPref
             case "SwitchPreference":
                 SwitchPreference s = (SwitchPreference) pf.findPreference(key);
                 s.setChecked(sharedPreferences.getBoolean(key, true));
+                if (key.contains("color")) {
+                    Command c = new Command(0, "pkill com.android.systemui");
+                    try {
+                        RootTools.getShell(true).add(c);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    } catch (TimeoutException e) {
+                        e.printStackTrace();
+                    } catch (RootDeniedException e) {
+                        e.printStackTrace();
+                    }
+                }
+                if (key.contains("global")) {
+                    Command c = new Command(0, "pkill com.android.systemui");
+                    try {
+                        RootTools.getShell(true).add(c);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    } catch (TimeoutException e) {
+                        e.printStackTrace();
+                    } catch (RootDeniedException e) {
+                        e.printStackTrace();
+                    }
+                }
                 break;
             case "CheckBoxPreference":
                 CheckBoxPreference cbp = (CheckBoxPreference) pf.findPreference(key);
@@ -336,6 +360,18 @@ public class HandlePreferenceFragments implements SharedPreferences.OnSharedPref
             case "ColorPickerPreference":
                 ColorPickerPreference cpp = (ColorPickerPreference) pf.findPreference(key);
                 cpp.setColor(sharedPreferences.getInt(key, Color.WHITE));
+                if (key.contains("color")) {
+                    Command c = new Command(0, "pkill com.android.systemui");
+                    try {
+                        RootTools.getShell(true).add(c);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    } catch (TimeoutException e) {
+                        e.printStackTrace();
+                    } catch (RootDeniedException e) {
+                        e.printStackTrace();
+                    }
+                }
                 break;
         }
         /*Calling main method to handle updating database based on preference changes*/

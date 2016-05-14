@@ -1,52 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android">
-    <PreferenceCategory android:title="Battery Mods">
-        <SwitchPreference android:title="Stock Battery" android:key="hide_battery_stock" android:defaultValue="true" android:summaryOn="Show" android:summaryOff="Hide" />
-        <SwitchPreference android:title="3Minit Battery(need some seconds)" android:key="minit_battery_visible" android:defaultValue="true" android:summaryOn="Show" android:summaryOff="Hide" />
-        <PreferenceScreen
-            android:dependency="minit_battery_visible"
-            android:summary="Custom battery chooser"
-            android:title="3Minit Battery Mod">
-            <intent
-                android:targetClass="com.three.minit.minitbatterysettings.MainActivity"
-                android:targetPackage="com.three.minit.minitbatterysettings.free"
-                android:action="android.intent.action.MAIN" />
+    <PreferenceCategory android:title="Expanded view">
+        <PreferenceScreen android:title="Colors1"
+        android:summary="Customize expanded view colors" >
+            <SwitchPreference android:title="On/Off custom colors" android:key="link_colors" android:summaryOn="enabled" android:summaryOff="disabled" />
+            <com.wubydax.romcontrol.prefs.ColorPickerPreference android:dependency="link_colors" android:title="Expanded view bg color" android:key="expanded_view_bg_color" android:summary="Choose color" android:defaultValue="\#ffffffff" alphaSlider="true" hexValue="true" />
+            <com.wubydax.romcontrol.prefs.ColorPickerPreference android:dependency="link_colors" android:title="Expanded view header icon color" android:key="expand_header_icon_color" android:summary="Choose color" android:defaultValue="\#ffffffff" alphaSlider="true" hexValue="true" />
+            <com.wubydax.romcontrol.prefs.ColorPickerPreference android:dependency="link_colors" android:title="Mod clock hours color" android:key="header_mod_clock_hours_color" android:summary="Choose color" android:defaultValue="\#ffffffff" alphaSlider="false" />
+            <com.wubydax.romcontrol.prefs.ColorPickerPreference android:dependency="link_colors" android:title="Mod clock minute color" android:key="header_mod_clock_minutes_color" android:summary="Choose color" android:defaultValue="\#ffffffff" alphaSlider="false" />
+            <com.wubydax.romcontrol.prefs.ColorPickerPreference android:dependency="link_colors" android:title="Mod clock second color" android:key="header_mod_clock_seconds_color" android:summary="Choose color" android:defaultValue="\#ffffffff" alphaSlider="false" />
+            <com.wubydax.romcontrol.prefs.ColorPickerPreference android:dependency="link_colors" android:title="Date color" android:key="date_header_color" android:summary="Choose color" android:defaultValue="\#ff325d84" alphaSlider="false" />
+        </PreferenceScreen>
+        <PreferenceScreen android:title="Colors2"
+            android:summary="Customize expanded view colors" >
+            <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Toggle and help text color" android:key="toggle_text_color" android:defaultValue="\#ffffffff" hexValue="true" alphaSlider="false" android:summary="Set text color" />
+            <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Toggle On Color" android:key="toggle_icon_on_color" android:defaultValue="\#ffffffff" hexValue="true" alphaSlider="true" android:summary="Set toggle On color" />
+            <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Toggle Off Color" android:key="toggle_icon_off_color" android:defaultValue="\#ff373737" hexValue="true" alphaSlider="true" android:summary="Set toggle Off color" />
+            <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Toggle Circle Color" android:key="toggle_buttons_background_color" android:defaultValue="\#ff373737" hexValue="true" alphaSlider="true" android:summary="Choose the color to toggle style Stock" />
+        </PreferenceScreen>
+        <PreferenceScreen android:title="Header mods"
+            android:summary="Customize clock" >
+            <SwitchPreference android:title="Stock clock" android:key="hide_header_stock_clock" android:summaryOn="Show" android:summaryOff="Hide" />
+            <SwitchPreference android:title="Mod clock" android:key="hide_header_mod_clock" android:summaryOn="Show" android:summaryOff="Hide" />
+            <SwitchPreference android:title="Mod clock second" android:key="hide_header_mod_clock_second" android:dependency="hide_header_mod_clock" android:summaryOn="Show" android:summaryOff="Hide" />
         </PreferenceScreen>
     </PreferenceCategory>
-    <PreferenceCategory android:title="Networkspeed">
-        <SwitchPreference android:title="Internetspeed" android:key="tweaks_speed_view" android:summaryOn="Show" android:summaryOff="Hide" />
-        <com.wubydax.romcontrol.prefs.ColorPickerPreference android:dependency="tweaks_speed_view" android:title="Download speed color" android:key="tweaks_speed_color_download" android:summary="Choose download speed color" android:defaultValue="\#ffffffff" alphaSlider="true" hexValue="true" />
-        <com.wubydax.romcontrol.prefs.ColorPickerPreference android:dependency="tweaks_speed_view" android:title="Upload speed color" android:key="tweaks_speed_color_upload" android:summary="Choose upload speed color" android:defaultValue="\#ffffffff" alphaSlider="true" hexValue="true" />
-    </PreferenceCategory>
-    <PreferenceCategory android:title="Expanded view header mods">
-        <SwitchPreference android:title="Stock clock" android:key="hide_header_stock_clock" android:summaryOn="Show" android:summaryOff="Hide" />
-        <SwitchPreference android:title="Mod clock" android:key="hide_header_mod_clock" android:summaryOn="Show" android:summaryOff="Hide" />
-        <SwitchPreference android:title="Mod clock second" android:key="hide_header_mod_clock_second" android:dependency="hide_header_mod_clock" android:summaryOn="Show" android:summaryOff="Hide" />
-    </PreferenceCategory>
-    <PreferenceCategory android:title="Expanded view colors(off needs UI restart)">
-        <SwitchPreference android:title="On/Off custom colors" android:key="link_colors" android:summaryOn="enabled" android:summaryOff="disabled" />
-        <com.wubydax.romcontrol.prefs.ColorPickerPreference android:dependency="link_colors" android:title="Expanded view bg color" android:key="expanded_view_bg_color" android:summary="Choose color" android:defaultValue="\#ffffffff" alphaSlider="true" hexValue="true" />
-        <com.wubydax.romcontrol.prefs.ColorPickerPreference android:dependency="link_colors" android:title="Expanded view header icon color" android:key="expand_header_icon_color" android:summary="Choose color" android:defaultValue="\#ffffffff" alphaSlider="true" hexValue="true" />
-        <com.wubydax.romcontrol.prefs.ColorPickerPreference android:dependency="link_colors" android:title="Mod clock hours color" android:key="header_mod_clock_hours_color" android:summary="Choose color" android:defaultValue="\#ffffffff" alphaSlider="false" />
-        <com.wubydax.romcontrol.prefs.ColorPickerPreference android:dependency="link_colors" android:title="Mod clock minute color" android:key="header_mod_clock_minutes_color" android:summary="Choose color" android:defaultValue="\#ffffffff" alphaSlider="false" />
-        <com.wubydax.romcontrol.prefs.ColorPickerPreference android:dependency="link_colors" android:title="Mod clock second color" android:key="header_mod_clock_seconds_color" android:summary="Choose color" android:defaultValue="\#ffffffff" alphaSlider="false" />
-        <com.wubydax.romcontrol.prefs.ColorPickerPreference android:dependency="link_colors" android:title="Data color" android:key="date_header_color" android:summary="Choose color" android:defaultValue="\#ff325d84" alphaSlider="false" />
-        <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Toggle and help text color (needs UI restart)" android:key="toggle_text_color" android:defaultValue="\#ffffffff" hexValue="true" alphaSlider="false" android:summary="Set text color" />
-    </PreferenceCategory>
     <PreferenceCategory android:title="Notification colors">
-        <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Notification Panel background color" android:key="notification_background_color" android:summary="Needs UI restart" android:defaultValue="\#ffffffff" alphaSlider="true" hexValue="true" />
+        <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Notification Panel background color" android:key="notification_background_color" android:summary="Choose a color" android:defaultValue="\#ffffffff" alphaSlider="true" hexValue="true" />
     </PreferenceCategory>
     <PreferenceCategory android:title="Lockscreen">
-        <SwitchPreference android:title="Show seconds in hours" android:key="lock_seconds" android:defaultValue="0" android:summaryOn="Show" android:summaryOff="Hide" />
-        <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Text Color hours" android:key="kg_clock_hours_color" android:summary="Choose a color" android:defaultValue="\#ffffffff" alphaSlider="false" />
-        <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Text Color minutes" android:key="kg_clock_minutes_color" android:summary="Choose a color" android:defaultValue="\#ffffffff" alphaSlider="false" />
-        <com.wubydax.romcontrol.prefs.ColorPickerPreference android:dependency="lock_seconds" android:title="Text Color seconds Hours" android:key="kg_clock_second_color" android:summary="Choose a color" android:defaultValue="\#ffffffff" alphaSlider="false" />
-        <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="The color of the date text" android:key="kg_date_color" android:summary="Choose a color" android:defaultValue="\#ffffffff" alphaSlider="false" />
+        <PreferenceScreen android:title="Clock and date"
+            android:summary="Customize clock and date" >
+            <SwitchPreference android:title="Show seconds in hours" android:key="lock_seconds" android:defaultValue="0" android:summaryOn="Show" android:summaryOff="Hide" />
+            <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Text Color hours" android:key="kg_clock_hours_color" android:summary="Choose a color" android:defaultValue="\#ffffffff" alphaSlider="false" />
+            <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Text Color minutes" android:key="kg_clock_minutes_color" android:summary="Choose a color" android:defaultValue="\#ffffffff" alphaSlider="false" />
+            <com.wubydax.romcontrol.prefs.ColorPickerPreference android:dependency="lock_seconds" android:title="Text Color seconds Hours" android:key="kg_clock_second_color" android:summary="Choose a color" android:defaultValue="\#ffffffff" alphaSlider="false" />
+            <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="The color of the date text" android:key="kg_date_color" android:summary="Choose a color" android:defaultValue="\#ffffffff" alphaSlider="false" />
+        </PreferenceScreen>
+        <PreferenceScreen android:title="Carrierlabel"
+            android:summary="Customize carrierlabel" >
+            <CheckBoxPreference android:title="Use Custom Carrier Text" android:key="custom_lock_carrier" android:defaultValue="false" android:summaryOn="Enabled" android:summaryOff="Disabled" />
+            <com.wubydax.romcontrol.prefs.MyEditTextPreference android:title="Carrier Custom Text" android:defaultValue="" android:key="custom_lock_carrier_text" android:summary="Edit carrier label" android:dependency="custom_lock_carrier" android:dialogTitle="Set Custom Text" />
+            <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Carrier Text" alphaSlider="true" android:defaultValue="-1" android:key="carrier_color" android:summary="Choose carrier color" />
+        </PreferenceScreen>
     </PreferenceCategory>
     <PreferenceCategory android:title="Statusbar">
-        <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="System and notification icons colors" android:summary="need UI restart" android:key="sb_icon_color" android:defaultValue="\#ffffffff" alphaSlider="true" hexValue="true" />
-        <PreferenceScreen android:title="Gradient Statusbar" android:key="com.potato.gradientapp.MainActivity" android:summary="Set Statusbar Color" />
-        <PreferenceScreen android:title="Statusbar Clock" android:key="com.potato.clock.main.Main" android:summary="Customize Clock" />
+        <PreferenceScreen android:title="Statusbar mods"
+            android:summary="Customize statusbar" >
+            <SwitchPreference android:title="Internetspeed" android:key="tweaks_speed_view" android:summaryOn="Show" android:summaryOff="Hide" />
+            <PreferenceScreen android:title="Gradient Statusbar" android:key="com.potato.gradientapp.MainActivity" android:summary="Set Statusbar Color" />
+            <PreferenceScreen android:title="Statusbar Clock" android:key="com.potato.clock.main.Main" android:summary="Customize Clock" />
+            <SwitchPreference android:title="Stock Battery" android:key="hide_battery_stock" android:defaultValue="true" android:summaryOn="Show" android:summaryOff="Hide" />
+            <SwitchPreference android:title="3Minit Battery(need some seconds)" android:key="minit_battery_visible" android:defaultValue="true" android:summaryOn="Show" android:summaryOff="Hide" />
+            <PreferenceScreen
+                android:dependency="minit_battery_visible"
+                android:summary="Custom battery chooser"
+                android:title="3Minit Battery Mod">
+                <intent
+                    android:targetClass="com.three.minit.minitbatterysettings.MainActivity"
+                    android:targetPackage="com.three.minit.minitbatterysettings.free"
+                    android:action="android.intent.action.MAIN" />
+            </PreferenceScreen>
+        </PreferenceScreen>
+        <PreferenceScreen android:title="Statusbar colors"
+            android:summary="Customize statusbar colors" >
+            <PreferenceCategory android:title="Statusbar colors">
+                <com.wubydax.romcontrol.prefs.ColorPickerPreference android:dependency="tweaks_speed_view" android:title="Download speed color" android:key="tweaks_speed_color_download" android:summary="Choose download speed color" android:defaultValue="\#ffffffff" alphaSlider="true" hexValue="true" />
+                <com.wubydax.romcontrol.prefs.ColorPickerPreference android:dependency="tweaks_speed_view" android:title="Upload speed color" android:key="tweaks_speed_color_upload" android:summary="Choose upload speed color" android:defaultValue="\#ffffffff" alphaSlider="true" hexValue="true" />
+                <SwitchPreference android:title="All icons same color" android:key="sb_global_toggle" android:defaultValue="false" android:summaryOn="Enabled" android:summaryOff="Disabled" />
+                <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Color for all" android:key="sb_global_color" android:defaultValue="-1" hexValue="true" alphaSlider="true" android:dependency="sb_global_toggle" android:summary="Pick universal color" />
+                <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="WiFi Icon Color" android:key="statusbar_wifi_color" android:defaultValue="-1" hexValue="true" alphaSlider="true" android:summary="Pick color of wifi icon" />
+                <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Signalbar Icon Color" android:key="statusbar_signal_color" android:defaultValue="-1" hexValue="true" alphaSlider="true" android:summary="Select color of signalbars" />
+                <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Data Icon Color" android:key="statusbar_data_color" android:defaultValue="-1" hexValue="true" alphaSlider="true" android:summary="3G/4G/LTE data icon color" />
+                <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Notification Icons Color" android:key="statusbar_icon_color" android:defaultValue="-1" hexValue="true" alphaSlider="true" android:summary="Volume, bluetooth, popups, etc.." />
+            </PreferenceCategory>
+        </PreferenceScreen>
     </PreferenceCategory>
 </PreferenceScreen>
