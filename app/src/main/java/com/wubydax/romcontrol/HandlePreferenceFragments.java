@@ -349,6 +349,18 @@ public class HandlePreferenceFragments implements SharedPreferences.OnSharedPref
                 } else {
                     l.setSummary("");
                 }
+                if (key.contains("background")) {
+                    Command c = new Command(0, "pkill com.android.systemui");
+                    try {
+                        RootTools.getShell(true).add(c);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    } catch (TimeoutException e) {
+                        e.printStackTrace();
+                    } catch (RootDeniedException e) {
+                        e.printStackTrace();
+                    }
+                }
                 break;
             case "MyEditTextPreference":
                 MyEditTextPreference et = (MyEditTextPreference) pf.findPreference(key);

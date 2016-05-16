@@ -18,6 +18,7 @@
             <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Toggle On Color" android:key="toggle_icon_on_color" android:defaultValue="\#ffffffff" hexValue="true" alphaSlider="true" android:summary="Set toggle On color" />
             <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Toggle Off Color" android:key="toggle_icon_off_color" android:defaultValue="\#ff373737" hexValue="true" alphaSlider="true" android:summary="Set toggle Off color" />
             <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Toggle Circle Color" android:key="toggle_buttons_background_color" android:defaultValue="\#ff373737" hexValue="true" alphaSlider="true" android:summary="Choose the color to toggle style Stock" />
+            <com.wubydax.romcontrol.prefs.MyListPreference android:entries="@array/toggle_buttons_background_entries" android:title="Toggle buttons background" android:key="toggle_buttons_background" android:summary="%s" android:entryValues="@array/toggle_buttons_background_values" />
         </PreferenceScreen>
         <PreferenceScreen android:title="Header mods"
             android:summary="Customize clock" >
@@ -48,7 +49,8 @@
     <PreferenceCategory android:title="Statusbar">
         <PreferenceScreen android:title="Statusbar mods"
             android:summary="Customize statusbar" >
-            <SwitchPreference android:title="Internetspeed" android:key="tweaks_speed_view" android:summaryOn="Show" android:summaryOff="Hide" />
+            <com.wubydax.romcontrol.prefs.MyListPreference android:entries="@array/SignalPositionName" android:title="Signal Position" android:key="leftsignal" android:defaultValue="0" android:entryValues="@array/SignalPositionValue" />
+            <SwitchPreference android:title="Trafficmeter" android:key="tweaks_speed_view" android:summaryOn="Show" android:summaryOff="Hide" />
             <PreferenceScreen android:title="Gradient Statusbar" android:key="com.potato.gradientapp.MainActivity" android:summary="Set Statusbar Color" />
             <PreferenceScreen android:title="Statusbar Clock" android:key="com.potato.clock.main.Main" android:summary="Customize Clock" />
             <SwitchPreference android:title="Stock Battery" android:key="hide_battery_stock" android:defaultValue="true" android:summaryOn="Show" android:summaryOff="Hide" />
@@ -66,8 +68,8 @@
         <PreferenceScreen android:title="Statusbar colors"
             android:summary="Customize statusbar colors" >
             <PreferenceCategory android:title="Statusbar colors">
-                <com.wubydax.romcontrol.prefs.ColorPickerPreference android:dependency="tweaks_speed_view" android:title="Download speed color" android:key="tweaks_speed_color_download" android:summary="Choose download speed color" android:defaultValue="\#ffffffff" alphaSlider="true" hexValue="true" />
-                <com.wubydax.romcontrol.prefs.ColorPickerPreference android:dependency="tweaks_speed_view" android:title="Upload speed color" android:key="tweaks_speed_color_upload" android:summary="Choose upload speed color" android:defaultValue="\#ffffffff" alphaSlider="true" hexValue="true" />
+                <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Download speed color" android:key="tweaks_speed_color_download" android:summary="Choose download speed color" android:defaultValue="\#ffffffff" alphaSlider="true" hexValue="true" />
+                <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Upload speed color" android:key="tweaks_speed_color_upload" android:summary="Choose upload speed color" android:defaultValue="\#ffffffff" alphaSlider="true" hexValue="true" />
                 <SwitchPreference android:title="All icons same color" android:key="sb_global_toggle" android:defaultValue="false" android:summaryOn="Enabled" android:summaryOff="Disabled" />
                 <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Color for all" android:key="sb_global_color" android:defaultValue="-1" hexValue="true" alphaSlider="true" android:dependency="sb_global_toggle" android:summary="Pick universal color" />
                 <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="WiFi Icon Color" android:key="statusbar_wifi_color" android:defaultValue="-1" hexValue="true" alphaSlider="true" android:summary="Pick color of wifi icon" />
