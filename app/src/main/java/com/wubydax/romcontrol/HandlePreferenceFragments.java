@@ -308,29 +308,8 @@ public class HandlePreferenceFragments implements SharedPreferences.OnSharedPref
             case "SwitchPreference":
                 SwitchPreference s = (SwitchPreference) pf.findPreference(key);
                 s.setChecked(sharedPreferences.getBoolean(key, true));
-                if (key.contains("color")) {
-                    Command c = new Command(0, "pkill com.android.systemui");
-                    try {
-                        RootTools.getShell(true).add(c);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    } catch (TimeoutException e) {
-                        e.printStackTrace();
-                    } catch (RootDeniedException e) {
-                        e.printStackTrace();
-                    }
-                }
-                if (key.contains("global")) {
-                    Command c = new Command(0, "pkill com.android.systemui");
-                    try {
-                        RootTools.getShell(true).add(c);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    } catch (TimeoutException e) {
-                        e.printStackTrace();
-                    } catch (RootDeniedException e) {
-                        e.printStackTrace();
-                    }
+                if (key.equals("link_colors")) {
+                    appRebootRequired("com.android.systemui");
                 }
                 break;
             case "CheckBoxPreference":
@@ -349,18 +328,6 @@ public class HandlePreferenceFragments implements SharedPreferences.OnSharedPref
                 } else {
                     l.setSummary("");
                 }
-                if (key.contains("background")) {
-                    Command c = new Command(0, "pkill com.android.systemui");
-                    try {
-                        RootTools.getShell(true).add(c);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    } catch (TimeoutException e) {
-                        e.printStackTrace();
-                    } catch (RootDeniedException e) {
-                        e.printStackTrace();
-                    }
-                }
                 break;
             case "MyEditTextPreference":
                 MyEditTextPreference et = (MyEditTextPreference) pf.findPreference(key);
@@ -372,17 +339,8 @@ public class HandlePreferenceFragments implements SharedPreferences.OnSharedPref
             case "ColorPickerPreference":
                 ColorPickerPreference cpp = (ColorPickerPreference) pf.findPreference(key);
                 cpp.setColor(sharedPreferences.getInt(key, Color.WHITE));
-                if (key.contains("color")) {
-                    Command c = new Command(0, "pkill com.android.systemui");
-                    try {
-                        RootTools.getShell(true).add(c);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    } catch (TimeoutException e) {
-                        e.printStackTrace();
-                    } catch (RootDeniedException e) {
-                        e.printStackTrace();
-                    }
+                if (key.equals("notification_background_color")) {
+                    appRebootRequired("com.android.systemui");
                 }
                 break;
         }
