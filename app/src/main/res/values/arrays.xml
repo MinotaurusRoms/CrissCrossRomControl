@@ -42,6 +42,13 @@
         <item>Convex square</item>
         <item>Concave square</item>
         <item>Glass square</item>
+        <item>Realms</item>
+        <item>Magnifying glass</item>
+        <item>Dark light</item>
+        <item>Metal</item>
+        <item>Leather</item>
+        <item>Leather rounded</item>
+        <item>Leather round</item>
     </string-array>
     <string-array name="toggle_buttons_background_values">
         <item>0</item>
@@ -51,6 +58,13 @@
         <item>5</item>
         <item>6</item>
         <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
     </string-array>
     <string-array name="traffic_entries">
         <item>Disabled</item>

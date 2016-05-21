@@ -311,6 +311,21 @@ public class HandlePreferenceFragments implements SharedPreferences.OnSharedPref
                 if (key.equals("link_colors")) {
                     appRebootRequired("com.android.systemui");
                 }
+                if (key.equals("toggle_text_color")) {
+                    appRebootRequired("com.android.systemui");
+                }
+                if (key.equals("toggle_icon_on_color")) {
+                    appRebootRequired("com.android.systemui");
+                }
+                if (key.equals("toggle_icon_off_color")) {
+                    appRebootRequired("com.android.systemui");
+                }
+                if (key.equals("sb_global_color")) {
+                    appRebootRequired("com.android.systemui");
+                }
+                if (key.equals("ongoing_notifications")) {
+                    appRebootRequired("com.android.systemui");
+                }
                 break;
             case "CheckBoxPreference":
                 CheckBoxPreference cbp = (CheckBoxPreference) pf.findPreference(key);
@@ -340,6 +355,18 @@ public class HandlePreferenceFragments implements SharedPreferences.OnSharedPref
                 ColorPickerPreference cpp = (ColorPickerPreference) pf.findPreference(key);
                 cpp.setColor(sharedPreferences.getInt(key, Color.WHITE));
                 if (key.equals("notification_background_color")) {
+                    appRebootRequired("com.android.systemui");
+                }
+                if (key.equals("statusbar_wifi_color")) {
+                    appRebootRequired("com.android.systemui");
+                }
+                if (key.equals("statusbar_signal_color")) {
+                    appRebootRequired("com.android.systemui");
+                }
+                if (key.equals("statusbar_data_color")) {
+                    appRebootRequired("com.android.systemui");
+                }
+                if (key.equals("statusbar_icon_color")) {
                     appRebootRequired("com.android.systemui");
                 }
                 break;
