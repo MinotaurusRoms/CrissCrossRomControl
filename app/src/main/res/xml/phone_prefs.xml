@@ -1,24 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceScreen
+        android:summary="Toolbox floating feature"
+        android:title="Toolbox">
+        <intent
+            android:targetClass="com.wubydax.toolboxsettings.ToolboxSettings"
+            android:targetPackage="com.wubydax.toolboxsettings"
+            android:action="android.intent.action.MAIN" />
+    </PreferenceScreen>
     <PreferenceCategory android:title="AutoCallRecord">
         <SwitchPreference android:title="Incoming auto call record" android:key="auto_call_record_in" android:defaultValue="false" android:summaryOn="Enabled" android:summaryOff="Disabled" />
         <SwitchPreference android:title="Outgoing auto call record" android:key="auto_call_record_out" android:defaultValue="false" android:summaryOn="Enabled" android:summaryOff="Disabled" />
     </PreferenceCategory>
     <PreferenceCategory android:title="Reboot Menue">
         <SwitchPreference android:title="Emergency Mode" android:key="power_emergency" android:defaultValue="false" android:summaryOn="Emergency mode will be shown" android:summaryOff="Currently removed" />
-    </PreferenceCategory>
-    <PreferenceCategory android:title="Lockscreen">
-        <com.wubydax.romcontrol.prefs.MyListPreference
-            android:entries="@array/lockscreen_notif_entries"
-            android:title="Notifications Shown on Lockscreen"
-            android:key="lockscreen_notifications"
-            android:defaultValue="2"
-            android:summary="Number shown on lockscreen"
-            android:entryValues="@array/lockscreen_notif_values" />
-    </PreferenceCategory>
-    <PreferenceCategory android:title="Quickpanel">
-        <SwitchPreference android:title="Single swipe for Quickpanel" android:key="tweaks_qs_pulldown" android:defaultValue="true" android:summaryOn="Feature is enabled"
-            android:summaryOff="Feature is disabled" />
     </PreferenceCategory>
     <PreferenceCategory android:title="Permanent notifications">
         <SwitchPreference android:title="Make Ongoing Notifications Removable" android:key="ongoing_notifications" android:defaultValue="false" android:summaryOn="Ongoing Notifications are removeable" android:summaryOff="Ongoing Notifications are permanent" />
@@ -41,5 +36,6 @@
                 android:defaultValue="350"
                 android:dependency="volbtn_music_controls"
                 android:entryValues="@array/volbtn_timeout_values" />
-        </PreferenceScreen>    </PreferenceCategory>
+        </PreferenceScreen>
+    </PreferenceCategory>
 </PreferenceScreen>

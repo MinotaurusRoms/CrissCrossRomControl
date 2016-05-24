@@ -4,6 +4,7 @@
     <PreferenceScreen android:title="Expanded view area">
         <PreferenceScreen android:title="Toggles"
             android:summary="Customize toggles" >
+            <com.wubydax.romcontrol.prefs.MyListPreference android:entries="@array/toggle_entries" android:title="Visible Toggles Shown" android:key="QSPanel_NumberCount" android:summary="Number shown on screen" android:entryValues="@array/toggle_values" />
             <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Toggle and help text color" android:key="toggle_text_color" android:defaultValue="\#ffffffff" hexValue="true" alphaSlider="false" android:summary="Set text color" />
             <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Toggle On Color" android:key="toggle_icon_on_color" android:defaultValue="\#ffffffff" hexValue="true" alphaSlider="true" android:summary="Set toggle On color" />
             <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Toggle Off Color" android:key="toggle_icon_off_color" android:defaultValue="\#ff373737" hexValue="true" alphaSlider="true" android:summary="Set toggle Off color" />
@@ -26,8 +27,17 @@
             <SwitchPreference android:title="Mod clock" android:key="hide_header_mod_clock" android:summaryOn="Show" android:summaryOff="Hide" />
             <SwitchPreference android:title="Mod clock second" android:key="hide_header_mod_clock_second" android:dependency="hide_header_mod_clock" android:summaryOn="Show" android:summaryOff="Hide" />
         </PreferenceScreen>
+        <SwitchPreference android:title="Single swipe for Quickpanel" android:key="tweaks_qs_pulldown" android:defaultValue="true" android:summaryOn="Feature is enabled"
+            android:summaryOff="Feature is disabled" />
     </PreferenceScreen>
     <PreferenceScreen android:title="Lockscreen">
+        <com.wubydax.romcontrol.prefs.MyListPreference
+            android:entries="@array/lockscreen_notif_entries"
+            android:title="Notifications Shown on Lockscreen"
+            android:key="lockscreen_notifications"
+            android:defaultValue="2"
+            android:summary="Number shown on lockscreen"
+            android:entryValues="@array/lockscreen_notif_values" />
         <PreferenceScreen android:title="Clock and date"
             android:summary="Customize clock and date" >
             <SwitchPreference android:title="Show seconds in hours" android:key="lock_seconds" android:defaultValue="0" android:summaryOn="Show" android:summaryOff="Hide" />
@@ -52,6 +62,23 @@
     <PreferenceScreen android:title="Statusbar">
         <PreferenceScreen android:title="Statusbar mods"
             android:summary="Choose your mods" >
+            <PreferenceCategory android:title="Virtual Buttons (set one button on position)">
+                <PreferenceScreen android:title="Lock Button">
+                    <CheckBoxPreference android:title="Right side" android:key="cocoyaya_rightcornerlock" android:defaultValue="false" android:summaryOn="On" android:summaryOff="Off" />
+                    <CheckBoxPreference android:title="Left side" android:key="cocoyaya_leftcornerlock" android:defaultValue="false" android:summaryOn="On" android:summaryOff="Off" />
+                    <CheckBoxPreference android:title="Center" android:key="cocoyaya_centercornerlock" android:defaultValue="false" android:summaryOn="On" android:summaryOff="Off" />
+                </PreferenceScreen>
+                <PreferenceScreen android:title="Home Button">
+                    <CheckBoxPreference android:title="Right side" android:key="cocoyaya_rightcornerhome" android:defaultValue="false" android:summaryOn="On" android:summaryOff="Off" />
+                    <CheckBoxPreference android:title="Left side" android:key="cocoyaya_leftcornerhome" android:defaultValue="false" android:summaryOn="On" android:summaryOff="Off" />
+                    <CheckBoxPreference android:title="Center" android:key="cocoyaya_centercornerhome" android:defaultValue="false" android:summaryOn="On" android:summaryOff="Off" />
+                </PreferenceScreen>
+                <PreferenceScreen android:title="Recent Button">
+                    <CheckBoxPreference android:title="Right side" android:key="cocoyaya_rightcornertask" android:defaultValue="false" android:summaryOn="On" android:summaryOff="Off" />
+                    <CheckBoxPreference android:title="Left side" android:key="cocoyaya_leftcornertask" android:defaultValue="false" android:summaryOn="On" android:summaryOff="Off" />
+                    <CheckBoxPreference android:title="Center" android:key="cocoyaya_centercornertask" android:defaultValue="false" android:summaryOn="On" android:summaryOff="Off" />
+                </PreferenceScreen>
+            </PreferenceCategory>
             <PreferenceCategory android:title="Signal">
                 <com.wubydax.romcontrol.prefs.MyListPreference android:entries="@array/SignalPositionName" android:title="Signal Allignment" android:key="leftsignal" android:defaultValue="0" android:entryValues="@array/SignalPositionValue" />
             </PreferenceCategory>
