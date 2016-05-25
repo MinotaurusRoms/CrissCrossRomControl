@@ -18,24 +18,18 @@
     <PreferenceCategory android:title="Permanent notifications">
         <SwitchPreference android:title="Make Ongoing Notifications Removable" android:key="ongoing_notifications" android:defaultValue="false" android:summaryOn="Ongoing Notifications are removeable" android:summaryOff="Ongoing Notifications are permanent" />
     </PreferenceCategory>
-    <PreferenceCategory android:title="Music/Volume Skip">
-        <PreferenceScreen
-            android:title="Volume Rocker Music Control"
-            android:summary="Customize volume rocker action" >
-            <PreferenceCategory
-                android:title="Music Control" />
-            <SwitchPreference
-                android:title="Music Control"
-                android:key="volbtn_music_controls"
-                android:defaultValue="false" />
-            <com.wubydax.romcontrol.prefs.MyListPreference
-                android:entries="@array/volbtn_timeout_entries"
-                android:title="Button Delay"
-                android:key="volbtn_timeout"
-                android:summary="%s"
-                android:defaultValue="350"
-                android:dependency="volbtn_music_controls"
-                android:entryValues="@array/volbtn_timeout_values" />
-        </PreferenceScreen>
+    <PreferenceCategory android:title="Music/Volume Skip" >
+        <SwitchPreference
+            android:title="Music Control"
+            android:key="volbtn_music_controls"
+            android:defaultValue="false" />
+        <com.wubydax.romcontrol.prefs.MyListPreference
+            android:entries="@array/volbtn_timeout_entries"
+            android:title="Button Delay"
+            android:key="volbtn_timeout"
+            android:summary="%s"
+            android:defaultValue="350"
+            android:dependency="volbtn_music_controls"
+            android:entryValues="@array/volbtn_timeout_values" />
     </PreferenceCategory>
 </PreferenceScreen>

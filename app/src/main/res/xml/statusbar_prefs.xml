@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="Virtual Buttons (set one button on position)">
+        <PreferenceScreen android:title="Lock Button">
+            <CheckBoxPreference android:title="Right side" android:key="cocoyaya_rightcornerlock" android:defaultValue="false" android:summaryOn="On" android:summaryOff="Off" />
+            <CheckBoxPreference android:title="Left side" android:key="cocoyaya_leftcornerlock" android:defaultValue="false" android:summaryOn="On" android:summaryOff="Off" />
+            <CheckBoxPreference android:title="Center" android:key="cocoyaya_centerlock" android:defaultValue="false" android:summaryOn="On" android:summaryOff="Off" />
+        </PreferenceScreen>
+        <PreferenceScreen android:title="Home Button">
+            <CheckBoxPreference android:title="Right side" android:key="cocoyaya_rightcornerhome" android:defaultValue="false" android:summaryOn="On" android:summaryOff="Off" />
+            <CheckBoxPreference android:title="Left side" android:key="cocoyaya_leftcornerhome" android:defaultValue="false" android:summaryOn="On" android:summaryOff="Off" />
+            <CheckBoxPreference android:title="Center" android:key="cocoyaya_centerhome" android:defaultValue="false" android:summaryOn="On" android:summaryOff="Off" />
+        </PreferenceScreen>
+        <PreferenceScreen android:title="Recent Button">
+            <CheckBoxPreference android:title="Right side" android:key="cocoyaya_rightcornertask" android:defaultValue="false" android:summaryOn="On" android:summaryOff="Off" />
+            <CheckBoxPreference android:title="Left side" android:key="cocoyaya_leftcornertask" android:defaultValue="false" android:summaryOn="On" android:summaryOff="Off" />
+            <CheckBoxPreference android:title="Center" android:key="cocoyaya_centertask" android:defaultValue="false" android:summaryOn="On" android:summaryOff="Off" />
+        </PreferenceScreen>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Signal">
+        <com.wubydax.romcontrol.prefs.MyListPreference android:entries="@array/SignalPositionName" android:title="Signal Allignment" android:key="leftsignal" android:defaultValue="0" android:entryValues="@array/SignalPositionValue" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Trafficmeter">
+        <SwitchPreference android:title="On/Off" android:key="tweaks_speed_view" android:summaryOn="Show" android:summaryOff="Hide" />
+        <com.wubydax.romcontrol.prefs.MyListPreference android:entries="@array/traffic_entries" android:dependency="tweaks_speed_view" android:title="Traffic Position" android:key="trafficpos" android:defaultValue="0" android:entryValues="@array/traffic_values" />
+        <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Download speed color" android:dependency="tweaks_speed_view" android:key="tweaks_speed_color_download" android:summary="Choose download speed color" android:defaultValue="\#ffffffff" alphaSlider="true" hexValue="true" />
+        <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Upload speed color" android:dependency="tweaks_speed_view" android:key="tweaks_speed_color_upload" android:summary="Choose upload speed color" android:defaultValue="\#ffffffff" alphaSlider="true" hexValue="true" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Potatoe">
+        <PreferenceScreen android:title="Gradient Statusbar" android:key="com.potato.gradientapp.MainActivity" android:summary="Set Statusbar Color" />
+        <PreferenceScreen
+            android:title="Statusbar Clock" android:key="com.potato.clock.main.Main" android:summary="Customize Clock" >
+        </PreferenceScreen>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Battery">
+        <SwitchPreference android:title="Stock Battery" android:key="hide_battery_stock" android:defaultValue="true" android:summaryOn="Show" android:summaryOff="Hide" />
+        <SwitchPreference android:title="3Minit Battery(need some seconds)" android:key="minit_battery_visible" android:defaultValue="true" android:summaryOn="Show" android:summaryOff="Hide" />
+        <PreferenceScreen
+            android:dependency="minit_battery_visible"
+            android:summary="Custom battery chooser"
+            android:title="3Minit Battery Mod">
+            <intent
+                android:targetClass="com.three.minit.minitbatterysettings.MainActivity"
+                android:targetPackage="com.three.minit.minitbatterysettings.free"
+                android:action="android.intent.action.MAIN" />
+        </PreferenceScreen>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Statusbar colors">
+        <SwitchPreference android:title="All icons same color" android:key="sb_global_toggle" android:defaultValue="false" android:summaryOn="Enabled" android:summaryOff="Disabled" />
+        <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Color for all" android:key="sb_global_color" android:defaultValue="-1" hexValue="true" alphaSlider="true" android:dependency="sb_global_toggle" android:summary="Pick universal color" />
+        <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="WiFi Icon Color" android:key="statusbar_wifi_color" android:defaultValue="-1" hexValue="true" alphaSlider="true" android:summary="Pick color of wifi icon" />
+        <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Signalbar Icon Color" android:key="statusbar_signal_color" android:defaultValue="-1" hexValue="true" alphaSlider="true" android:summary="Select color of signalbars" />
+        <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Data Icon Color" android:key="statusbar_data_color" android:defaultValue="-1" hexValue="true" alphaSlider="true" android:summary="3G/4G/LTE data icon color" />
+        <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Notification Icons Color" android:key="statusbar_icon_color" android:defaultValue="-1" hexValue="true" alphaSlider="true" android:summary="Volume, bluetooth, popups, etc.." />
+    </PreferenceCategory>
+</PreferenceScreen>

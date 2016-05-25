@@ -2,18 +2,18 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android">
     <PreferenceScreen android:title="Expanded view area">
+        <SwitchPreference android:title="On/Off some custom colors" android:key="link_colors" android:summaryOn="Samsung Themes colors dont work" android:summaryOff="Samsung Theme colors work" />
         <PreferenceScreen android:title="Toggles"
             android:summary="Customize toggles" >
             <com.wubydax.romcontrol.prefs.MyListPreference android:entries="@array/toggle_entries" android:title="Visible Toggles Shown" android:key="QSPanel_NumberCount" android:summary="Number shown on screen" android:entryValues="@array/toggle_values" />
-            <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Toggle and help text color" android:key="toggle_text_color" android:defaultValue="\#ffffffff" hexValue="true" alphaSlider="false" android:summary="Set text color" />
+            <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Toggle and help text color" android:dependency="link_colors" android:key="toggle_text_color" android:defaultValue="\#ffffffff" hexValue="true" alphaSlider="false" android:summary="Set text color" />
             <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Toggle On Color" android:key="toggle_icon_on_color" android:defaultValue="\#ffffffff" hexValue="true" alphaSlider="true" android:summary="Set toggle On color" />
             <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Toggle Off Color" android:key="toggle_icon_off_color" android:defaultValue="\#ff373737" hexValue="true" alphaSlider="true" android:summary="Set toggle Off color" />
             <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Toggle Circle Color" android:key="toggle_buttons_background_color" android:defaultValue="\#ff373737" hexValue="true" alphaSlider="true" android:summary="Choose the color to toggle style Stock" />
             <com.wubydax.romcontrol.prefs.MyListPreference android:entries="@array/toggle_buttons_background_entries" android:title="Toggle buttons background" android:key="toggle_buttons_background" android:summary="%s" android:entryValues="@array/toggle_buttons_background_values" />
         </PreferenceScreen>
         <PreferenceScreen android:title="Colors"
-        android:summary="Deactivate all to use themes" >
-        <SwitchPreference android:title="On/Off custom colors" android:key="link_colors" android:summaryOn="enabled" android:summaryOff="disabled" />
+        android:summary="Customize colors" >
         <com.wubydax.romcontrol.prefs.ColorPickerPreference android:dependency="link_colors" android:title="Expanded view bg color" android:key="expanded_view_bg_color" android:summary="Choose color" android:defaultValue="\#ffffffff" alphaSlider="true" hexValue="true" />
         <com.wubydax.romcontrol.prefs.ColorPickerPreference android:dependency="link_colors" android:title="Expanded view header icon color" android:key="expand_header_icon_color" android:summary="Choose color" android:defaultValue="\#ffffffff" alphaSlider="true" hexValue="true" />
         <com.wubydax.romcontrol.prefs.ColorPickerPreference android:dependency="link_colors" android:title="Mod clock hours color" android:key="header_mod_clock_hours_color" android:summary="Choose color" android:defaultValue="\#ffffffff" alphaSlider="false" />
@@ -66,17 +66,17 @@
                 <PreferenceScreen android:title="Lock Button">
                     <CheckBoxPreference android:title="Right side" android:key="cocoyaya_rightcornerlock" android:defaultValue="false" android:summaryOn="On" android:summaryOff="Off" />
                     <CheckBoxPreference android:title="Left side" android:key="cocoyaya_leftcornerlock" android:defaultValue="false" android:summaryOn="On" android:summaryOff="Off" />
-                    <CheckBoxPreference android:title="Center" android:key="cocoyaya_centercornerlock" android:defaultValue="false" android:summaryOn="On" android:summaryOff="Off" />
+                    <CheckBoxPreference android:title="Center" android:key="cocoyaya_centerlock" android:defaultValue="false" android:summaryOn="On" android:summaryOff="Off" />
                 </PreferenceScreen>
                 <PreferenceScreen android:title="Home Button">
                     <CheckBoxPreference android:title="Right side" android:key="cocoyaya_rightcornerhome" android:defaultValue="false" android:summaryOn="On" android:summaryOff="Off" />
                     <CheckBoxPreference android:title="Left side" android:key="cocoyaya_leftcornerhome" android:defaultValue="false" android:summaryOn="On" android:summaryOff="Off" />
-                    <CheckBoxPreference android:title="Center" android:key="cocoyaya_centercornerhome" android:defaultValue="false" android:summaryOn="On" android:summaryOff="Off" />
+                    <CheckBoxPreference android:title="Center" android:key="cocoyaya_centerhome" android:defaultValue="false" android:summaryOn="On" android:summaryOff="Off" />
                 </PreferenceScreen>
                 <PreferenceScreen android:title="Recent Button">
                     <CheckBoxPreference android:title="Right side" android:key="cocoyaya_rightcornertask" android:defaultValue="false" android:summaryOn="On" android:summaryOff="Off" />
                     <CheckBoxPreference android:title="Left side" android:key="cocoyaya_leftcornertask" android:defaultValue="false" android:summaryOn="On" android:summaryOff="Off" />
-                    <CheckBoxPreference android:title="Center" android:key="cocoyaya_centercornertask" android:defaultValue="false" android:summaryOn="On" android:summaryOff="Off" />
+                    <CheckBoxPreference android:title="Center" android:key="cocoyaya_centertask" android:defaultValue="false" android:summaryOn="On" android:summaryOff="Off" />
                 </PreferenceScreen>
             </PreferenceCategory>
             <PreferenceCategory android:title="Signal">

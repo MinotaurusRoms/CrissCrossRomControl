@@ -4,7 +4,10 @@
     <string name="drawer_close">Menu closed</string>
     <string name="action_settings">Settings</string>
     <string-array name="nav_drawer_items">
-        <item>CrissCross SystemUI Settings</item>
+        <item>Statusbar</item>
+        <item>Expanded view</item>
+        <item>Notifications</item>
+        <item>Lockscreen</item>
         <item>Random Settings</item>
         <item>Useful Links</item>
     </string-array>

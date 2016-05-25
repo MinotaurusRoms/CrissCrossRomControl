@@ -10,11 +10,11 @@
 
     <color name="myPrimaryColor">#000000</color>
     <color name="myPrimaryDarkColor">#000000</color>
-    <color name="myAccentColor">#FF5722</color>
+    <color name="myAccentColor">#ff0004</color>
     <color name="myDrawerBackground">#FFF</color>
     <color name="myWindowBackground">#FFF</color>
     <color name="windowBgTransparent">#00000000</color>
-    <color name="myTextPrimaryColor">#fff</color>
+    <color name="myTextPrimaryColor">#000000</color>
     <color name="myNavigationColor">#ffffff</color>
     <color name="myInverseColor">#000000</color>
     <color name="myPrimaryColorLight">#673AB7</color>

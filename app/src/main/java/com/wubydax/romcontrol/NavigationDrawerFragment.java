@@ -151,10 +151,14 @@ public class NavigationDrawerFragment extends Fragment implements NavigationDraw
     public List<NavItem> getMenu() {
         List<NavItem> items = new ArrayList<>();
         String[] mTitles = getResources().getStringArray(R.array.nav_drawer_items);
-        int[] mIcons = {R.drawable.ic_ui_mods,
-                R.drawable.ic_phone_mods,
-                R.drawable.ic_general_framework,
-                R.drawable.ic_apps,
+        int[] mIcons = {R.drawable.ic_statusbar,
+                R.drawable.ic_expanded,
+                R.drawable.ic_notification,
+                R.drawable.ic_lockscreen,
+                R.drawable.ic_settings,
+                R.drawable.ic_links,
+                R.drawable.ic_settings,
+                R.drawable.ic_settings,
                 R.drawable.ic_settings};
         for (int i=0; i<mTitles.length && i<mIcons.length; i++){
             NavItem current = new NavItem();
@@ -199,7 +203,6 @@ public class NavigationDrawerFragment extends Fragment implements NavigationDraw
                     mUserLearnedDrawer = true;
                     SharedPreferences sp = PreferenceManager
                             .getDefaultSharedPreferences(getActivity());
-                    sp.edit().putBoolean(PREF_USER_LEARNED_DRAWER, true).apply();
                 }
                 getActivity().invalidateOptionsMenu(); // calls onPrepareOptionsMenu()
             }

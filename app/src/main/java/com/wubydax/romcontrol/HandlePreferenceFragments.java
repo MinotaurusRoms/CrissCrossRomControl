@@ -311,7 +311,7 @@ public class HandlePreferenceFragments implements SharedPreferences.OnSharedPref
                 if (key.equals("link_colors")) {
                     appRebootRequired("com.android.systemui");
                 }
-                if (key.equals("sb_global_color")) {
+                if (key.equals("sb_global_toggle")) {
                     appRebootRequired("com.android.systemui");
                 }
                 if (key.equals("ongoing_notifications")) {
@@ -359,13 +359,7 @@ public class HandlePreferenceFragments implements SharedPreferences.OnSharedPref
                 if (key.equals("statusbar_icon_color")) {
                     appRebootRequired("com.android.systemui");
                 }
-                if (key.equals("toggle_text_color")) {
-                    appRebootRequired("com.android.systemui");
-                }
-                if (key.equals("toggle_icon_on_color")) {
-                    appRebootRequired("com.android.systemui");
-                }
-                if (key.equals("toggle_icon_off_color")) {
+                if (key.equals("sb_global_color")) {
                     appRebootRequired("com.android.systemui");
                 }
                 break;

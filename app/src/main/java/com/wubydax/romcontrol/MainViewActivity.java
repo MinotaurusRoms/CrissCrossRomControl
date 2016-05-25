@@ -94,10 +94,14 @@ public class MainViewActivity extends AppCompatActivity
         * 7. Add an action based on position. Remember that positions in array are beginning at 0. So if your item is number 6 in array, it will have a position of 5... etc
         * 8. You need to add same items to the int array in NavigationDrawerFragment, which has the same method*/
         String[] mTitles = getResources().getStringArray(R.array.nav_drawer_items);
-        int[] mIcons = {R.drawable.ic_ui_mods,
-                R.drawable.ic_phone_mods,
-                R.drawable.ic_general_framework,
-                R.drawable.ic_apps,
+        int[] mIcons = {R.drawable.ic_statusbar,
+                R.drawable.ic_expanded,
+                R.drawable.ic_notification,
+                R.drawable.ic_lockscreen,
+                R.drawable.ic_settings,
+                R.drawable.ic_links,
+                R.drawable.ic_settings,
+                R.drawable.ic_settings,
                 R.drawable.ic_settings};
         for (int i = 0; i < mTitles.length && i < mIcons.length; i++) {
             com.wubydax.romcontrol.NavItem current = new com.wubydax.romcontrol.NavItem();
@@ -117,21 +121,23 @@ public class MainViewActivity extends AppCompatActivity
         setTitle(getMenu().get(position).getText());
         switch (position) {
             case 0:
-                getFragmentManager().beginTransaction().addToBackStack(null).replace(R.id.container, new UIPrefsFragment()).commitAllowingStateLoss();
+                getFragmentManager().beginTransaction().addToBackStack(null).replace(R.id.container, new StatusbarFragment()).commitAllowingStateLoss();
                 break;
             case 1:
-                getFragmentManager().beginTransaction().addToBackStack(null).replace(R.id.container, new PhonePrefsFragment()).commitAllowingStateLoss();
+                getFragmentManager().beginTransaction().addToBackStack(null).replace(R.id.container, new ExpandedViewFragment()).commitAllowingStateLoss();
                 break;
             case 2:
-                getFragmentManager().beginTransaction().addToBackStack(null).replace(R.id.container, new FrameworksGeneralFragment()).commitAllowingStateLoss();
+                getFragmentManager().beginTransaction().addToBackStack(null).replace(R.id.container, new NotificationsFragment()).commitAllowingStateLoss();
                 break;
             case 3:
-                getFragmentManager().beginTransaction().addToBackStack(null).replace(R.id.container, new AppLinksFragment()).commitAllowingStateLoss();
+                getFragmentManager().beginTransaction().addToBackStack(null).replace(R.id.container, new LockscreenFragment()).commitAllowingStateLoss();
                 break;
             case 4:
-                showThemeChooserDialog();
+                getFragmentManager().beginTransaction().addToBackStack(null).replace(R.id.container, new PhonePrefsFragment()).commitAllowingStateLoss();
                 break;
-
+            case 5:
+                getFragmentManager().beginTransaction().addToBackStack(null).replace(R.id.container, new FrameworksGeneralFragment()).commitAllowingStateLoss();
+                break;
         }
 
     }
