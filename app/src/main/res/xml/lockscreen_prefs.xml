@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-    <com.wubydax.romcontrol.prefs.MyListPreference
-        android:entries="@array/lockscreen_notif_entries"
-        android:title="Notifications Shown on Lockscreen"
-        android:key="lockscreen_notifications"
-        android:defaultValue="2"
-        android:summary="Number shown on lockscreen"
-        android:entryValues="@array/lockscreen_notif_values" />
     <PreferenceCategory android:title="Clock and date" >
         <SwitchPreference android:title="Show seconds in hours" android:key="lock_seconds" android:defaultValue="0" android:summaryOn="Show" android:summaryOff="Hide" />
         <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Text Color hours" android:key="kg_clock_hours_color" android:summary="Choose a color" android:defaultValue="\#ffffffff" alphaSlider="false" />

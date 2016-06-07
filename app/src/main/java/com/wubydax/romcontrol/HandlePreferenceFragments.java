@@ -10,14 +10,19 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import android.preference.PreferenceScreen;
 import android.preference.SwitchPreference;
+import android.provider.MediaStore;
 import android.provider.Settings;
 import android.util.Log;
 import android.util.TypedValue;
@@ -34,9 +39,12 @@ import com.wubydax.romcontrol.prefs.IntentDialogPreference;
 import com.wubydax.romcontrol.prefs.MyEditTextPreference;
 import com.wubydax.romcontrol.prefs.MyListPreference;
 import com.wubydax.romcontrol.prefs.SeekBarPreference;
+import com.wubydax.romcontrol.prefs.ThumbnailListPreference;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Stack;
@@ -145,6 +153,28 @@ public class HandlePreferenceFragments implements SharedPreferences.OnSharedPref
                     PreferenceScreen preferenceParent = preferenceParentTree.get(ps);
                     preferenceParent.removePreference(ps);
 
+                }
+            } else if(ps.getKey().equals("notification_panel_bg")) {
+                String uriString = Settings.System.getString(cr, ps.getKey());
+                Uri uri = uriString != null && !uriString.equals("") ? Uri.parse(uriString) : null;
+                if(uri != null) {
+                    InputStream inputStream = null;
+                    try {
+                        inputStream = cr.openInputStream(uri);
+                        Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
+                        Drawable drawable = new BitmapDrawable(c.getResources(), bitmap);
+                        ps.setIcon(drawable);
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    } finally {
+                        if (inputStream != null) {
+                            try {
+                                inputStream.close();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -287,6 +317,14 @@ public class HandlePreferenceFragments implements SharedPreferences.OnSharedPref
                     MyEditTextPreference et = (MyEditTextPreference) pf.findPreference(key);
                     et.setSummary(t);
                 }
+
+                if(p instanceof ThumbnailListPreference) {
+                    if(actualString == null) {
+                        Settings.System.putString(cr, key, prefString);
+                    } else if(!prefString.equals(t)){
+                        ed.putString(key, t).apply();
+                    }
+                }
             }
         }
 
@@ -315,6 +353,18 @@ public class HandlePreferenceFragments implements SharedPreferences.OnSharedPref
                     appRebootRequired("com.android.systemui");
                 }
                 if (key.equals("ongoing_notifications")) {
+                    appRebootRequired("com.android.systemui");
+                }
+                if (key.equals("quick_launch_visible")) {
+                    appRebootRequired("com.android.systemui");
+                }
+                if (key.equals("CustomCarrierRight")) {
+                    appRebootRequired("com.android.systemui");
+                }
+                if (key.equals("CustomCarrierCenter")) {
+                    appRebootRequired("com.android.systemui");
+                }
+                if (key.equals("CustomCarrierLeft")) {
                     appRebootRequired("com.android.systemui");
                 }
                 break;
@@ -362,6 +412,15 @@ public class HandlePreferenceFragments implements SharedPreferences.OnSharedPref
                 if (key.equals("sb_global_color")) {
                     appRebootRequired("com.android.systemui");
                 }
+                if (key.equals("help_text_color")) {
+                    appRebootRequired("com.android.systemui");
+                }
+                if (key.equals("data_usage_color")) {
+                    appRebootRequired("com.android.systemui");
+                }
+                if (key.equals("CustomCarrierColor")) {
+                    appRebootRequired("com.android.systemui");
+                }
                 break;
         }
         /*Calling main method to handle updating database based on preference changes*/
@@ -380,7 +439,7 @@ public class HandlePreferenceFragments implements SharedPreferences.OnSharedPref
             isEnabled = sp.getBoolean(key, true);
             dbInt = (isEnabled) ? 1 : 0;
             Settings.System.putInt(cr, key, dbInt);
-        } else if (o instanceof MyEditTextPreference || o instanceof MyListPreference || o instanceof IntentDialogPreference) {
+        } else if (o instanceof MyEditTextPreference || o instanceof MyListPreference || o instanceof IntentDialogPreference || o instanceof ThumbnailListPreference) {
             value = sp.getString(key, "");
             Settings.System.putString(cr, key, value);
         } else if (o instanceof ColorPickerPreference) {
@@ -451,6 +510,10 @@ public class HandlePreferenceFragments implements SharedPreferences.OnSharedPref
                 Toast.makeText(c, "App not installed or intent not valid", Toast.LENGTH_SHORT).show();
             }
 
+        } else if(preference.getKey() != null && preference.getKey().equals("notification_panel_bg")) {
+            Intent getContentIntent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+            getContentIntent.setType("image/*");
+            pf.startActivityForResult(getContentIntent, 46);
         } else if (preference.getKey() == null && preference.getIntent()!=null) {
             Intent intentFromPreference = preference.getIntent();
             c.startActivity(intentFromPreference);

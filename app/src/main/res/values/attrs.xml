@@ -7,8 +7,20 @@
         <attr name="tint" format="reference|color" />
     </declare-styleable>
     <!--<declare-styleable name=""-->
-<attr name="nav_drawer_bg_color" format="color"/>
+    <declare-styleable name="ThumbnailListPreference">
+        <attr name="drawableArray" format="reference" />
+        <attr name="entryList" format="reference" />
+        <attr name="entryValuesList" format="reference" />
+        <attr name="entryDefault" format="string" />
+    </declare-styleable>
+    <attr name="nav_drawer_bg_color" format="color"/>
     <attr name="myAccentColor" format="color"/>
 <attr name="nav_item_color_selector" format="reference|color"/>
     <attr name="nav_drawer_header" format="reference"/>
+    <attr name="maximum" format="integer" />
+    <attr name="minimum" format="integer" />
+    <attr name="interval" format="integer" />
+    <attr name="unitsLeft" format="string" />
+    <attr name="min" format="float" />
+    <attr name="unitsRight" format="string" />
 </resources>

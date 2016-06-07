@@ -1,22 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
-    <PreferenceScreen
-        android:summary="Toolbox floating feature"
-        android:title="Toolbox">
-        <intent
-            android:targetClass="com.wubydax.toolboxsettings.ToolboxSettings"
-            android:targetPackage="com.wubydax.toolboxsettings"
-            android:action="android.intent.action.MAIN" />
-    </PreferenceScreen>
+    <PreferenceCategory android:title="Apps">
+        <PreferenceScreen
+            android:summary="Toolbox floating feature"
+            android:title="Toolbox">
+            <intent
+                android:targetClass="com.wubydax.toolboxsettings.ToolboxSettings"
+                android:targetPackage="com.wubydax.toolboxsettings"
+                android:action="android.intent.action.MAIN" />
+        </PreferenceScreen>
+        <PreferenceScreen
+            android:title="KeyRemapper" android:key="com.vtapps.keyremapper.main" android:summary="Customize Phone Keys" >
+        </PreferenceScreen>
+    </PreferenceCategory>
     <PreferenceCategory android:title="AutoCallRecord">
         <SwitchPreference android:title="Incoming auto call record" android:key="auto_call_record_in" android:defaultValue="false" android:summaryOn="Enabled" android:summaryOff="Disabled" />
         <SwitchPreference android:title="Outgoing auto call record" android:key="auto_call_record_out" android:defaultValue="false" android:summaryOn="Enabled" android:summaryOff="Disabled" />
     </PreferenceCategory>
     <PreferenceCategory android:title="Reboot Menue">
         <SwitchPreference android:title="Emergency Mode" android:key="power_emergency" android:defaultValue="false" android:summaryOn="Emergency mode will be shown" android:summaryOff="Currently removed" />
-    </PreferenceCategory>
-    <PreferenceCategory android:title="Permanent notifications">
-        <SwitchPreference android:title="Make Ongoing Notifications Removable" android:key="ongoing_notifications" android:defaultValue="false" android:summaryOn="Ongoing Notifications are removeable" android:summaryOff="Ongoing Notifications are permanent" />
     </PreferenceCategory>
     <PreferenceCategory android:title="Music/Volume Skip" >
         <SwitchPreference
@@ -31,5 +33,8 @@
             android:defaultValue="350"
             android:dependency="volbtn_music_controls"
             android:entryValues="@array/volbtn_timeout_values" />
+    </PreferenceCategory>
+        <PreferenceCategory android:title="Quicklaunch" >
+        <SwitchPreference android:title="Quicklaunch panel" android:key="quick_launch_visible" android:defaultValue="true" android:summaryOn="Enabled" android:summaryOff="Disabled" />
     </PreferenceCategory>
 </PreferenceScreen>

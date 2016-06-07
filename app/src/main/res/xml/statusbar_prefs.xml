@@ -17,14 +17,21 @@
             <CheckBoxPreference android:title="Center" android:key="cocoyaya_centertask" android:defaultValue="false" android:summaryOn="On" android:summaryOff="Off" />
         </PreferenceScreen>
     </PreferenceCategory>
+    <PreferenceCategory android:title="Custom Carrier">
+        <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Custom Carrier Color" android:key="CustomCarrierColor" android:defaultValue="\#ffffffff"/>
+        <SwitchPreference android:title="Custom Carrier Right of Wifi/Signal Combo" android:key="CustomCarrierRight" android:defaultValue="false" android:summaryOn="Show" android:summaryOff="Hide" />
+        <SwitchPreference android:title="Custom Carrier Center of Wifi/Signal Combo" android:key="CustomCarrierCenter" android:defaultValue="false" android:summaryOn="Show" android:summaryOff="Hide" />
+        <SwitchPreference android:title="Custom Carrier Left of Wifi/Signal Combo" android:key="CustomCarrierLeft" android:defaultValue="false" android:summaryOn="Show" android:summaryOff="Hide" />
+    </PreferenceCategory>
     <PreferenceCategory android:title="Signal">
         <com.wubydax.romcontrol.prefs.MyListPreference android:entries="@array/SignalPositionName" android:title="Signal Allignment" android:key="leftsignal" android:defaultValue="0" android:entryValues="@array/SignalPositionValue" />
     </PreferenceCategory>
     <PreferenceCategory android:title="Trafficmeter">
-        <SwitchPreference android:title="On/Off" android:key="tweaks_speed_view" android:summaryOn="Show" android:summaryOff="Hide" />
-        <com.wubydax.romcontrol.prefs.MyListPreference android:entries="@array/traffic_entries" android:dependency="tweaks_speed_view" android:title="Traffic Position" android:key="trafficpos" android:defaultValue="0" android:entryValues="@array/traffic_values" />
-        <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Download speed color" android:dependency="tweaks_speed_view" android:key="tweaks_speed_color_download" android:summary="Choose download speed color" android:defaultValue="\#ffffffff" alphaSlider="true" hexValue="true" />
-        <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Upload speed color" android:dependency="tweaks_speed_view" android:key="tweaks_speed_color_upload" android:summary="Choose upload speed color" android:defaultValue="\#ffffffff" alphaSlider="true" hexValue="true" />
+        <com.wubydax.romcontrol.prefs.MyListPreference android:title="@string/show_network_traffic_state" android:entryValues="@array/show_network_traffic_state_values" android:key="network_traffic_state" android:entries="@array/show_network_traffic_state_entries"/>
+        <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="@string/network_traffic_color_style" android:key="network_traffic_color" android:defaultValue="\#ffffffff"/>
+        <CheckBoxPreference android:title="@string/network_traffic_autohide" android:key="network_traffic_autohide" android:defaultValue="false" android:summary="@string/network_traffic_autohide_summary"/>
+        <com.wubydax.romcontrol.prefs.SeekBarPreference android:title="@string/network_traffic_autohide_threshold" android:key="network_traffic_autohide_threshold" unitsRight="kB/s" min="0.0" unitsLeft="" android:dependency="network_traffic_autohide" android:max="100"/>
+        <com.wubydax.romcontrol.prefs.MyListPreference android:entries="@array/traffic_entries" android:title="Traffic Position" android:key="trafficpos" android:defaultValue="0" android:entryValues="@array/traffic_values" />
     </PreferenceCategory>
     <PreferenceCategory android:title="Potatoe">
         <PreferenceScreen android:title="Gradient Statusbar" android:key="com.potato.gradientapp.MainActivity" android:summary="Set Statusbar Color" />
@@ -43,6 +50,13 @@
                 android:targetClass="com.three.minit.minitbatterysettings.MainActivity"
                 android:targetPackage="com.three.minit.minitbatterysettings.free"
                 android:action="android.intent.action.MAIN" />
+        </PreferenceScreen>
+        <PreferenceScreen android:title="Battery Bar" android:summary="Display Line on top for battery">
+            <com.wubydax.romcontrol.prefs.MyListPreference android:entries="@array/battery_bar_entries" android:title="Battery Bar" android:key="battery_bar" android:summary="%s" android:defaultValue="1" android:entryValues="@array/battery_bar_values" />
+            <SwitchPreference android:title="Battery bar animation" android:key="battery_bar_animate" android:defaultValue="true" android:summaryOn="Charging animation enabled" android:summaryOff="Animation disabled" />
+            <com.wubydax.romcontrol.prefs.MyListPreference android:entries="@array/battery_bar_style_entries" android:title="Battery bar style" android:key="battery_bar_style" android:summary="%s" android:defaultValue="1" android:entryValues="@array/battery_bar_style_values" />
+            <com.wubydax.romcontrol.prefs.MyListPreference android:entries="@array/battery_bar_thickness_entries" android:title="Thickness of battery bar" android:key="battery_bar_thickness" android:summary="%s" android:defaultValue="2" android:entryValues="@array/battery_bar_thickness_values" />
+            <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Battery Bar Color" android:key="battery_bar_color" android:summary="Choose color of battery bar" android:defaultValue="-1" hexValue="true" alphaSlider="true" />
         </PreferenceScreen>
     </PreferenceCategory>
     <PreferenceCategory android:title="Statusbar colors">
