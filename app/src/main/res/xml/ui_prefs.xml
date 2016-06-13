@@ -10,7 +10,6 @@
             <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Toggle On Color" android:key="toggle_icon_on_color" android:defaultValue="\#ffffffff" hexValue="true" alphaSlider="true" android:summary="Set toggle On color" />
             <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Toggle Off Color" android:key="toggle_icon_off_color" android:defaultValue="\#ff373737" hexValue="true" alphaSlider="true" android:summary="Set toggle Off color" />
             <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Toggle Circle Color" android:key="toggle_buttons_background_color" android:defaultValue="\#ff373737" hexValue="true" alphaSlider="true" android:summary="Choose the color to toggle style Stock" />
-            <com.wubydax.romcontrol.prefs.MyListPreference android:entries="@array/toggle_buttons_background_entries" android:title="Toggle buttons background" android:key="toggle_buttons_background" android:summary="%s" android:entryValues="@array/toggle_buttons_background_values" />
         </PreferenceScreen>
         <PreferenceScreen android:title="Colors"
         android:summary="Customize colors" >

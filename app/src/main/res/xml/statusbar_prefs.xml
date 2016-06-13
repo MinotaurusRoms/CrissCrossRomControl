@@ -18,7 +18,7 @@
         </PreferenceScreen>
     </PreferenceCategory>
     <PreferenceCategory android:title="Custom Carrier">
-        <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Custom Carrier Color" android:key="CustomCarrierColor" android:defaultValue="\#ffffffff"/>
+        <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Custom Carrier Color" android:key="CustomCarrierColor" alphaSlider="true" android:defaultValue="\#ffffffff"/>
         <SwitchPreference android:title="Custom Carrier Right of Wifi/Signal Combo" android:key="CustomCarrierRight" android:defaultValue="false" android:summaryOn="Show" android:summaryOff="Hide" />
         <SwitchPreference android:title="Custom Carrier Center of Wifi/Signal Combo" android:key="CustomCarrierCenter" android:defaultValue="false" android:summaryOn="Show" android:summaryOff="Hide" />
         <SwitchPreference android:title="Custom Carrier Left of Wifi/Signal Combo" android:key="CustomCarrierLeft" android:defaultValue="false" android:summaryOn="Show" android:summaryOff="Hide" />
@@ -28,7 +28,7 @@
     </PreferenceCategory>
     <PreferenceCategory android:title="Trafficmeter">
         <com.wubydax.romcontrol.prefs.MyListPreference android:title="@string/show_network_traffic_state" android:entryValues="@array/show_network_traffic_state_values" android:key="network_traffic_state" android:entries="@array/show_network_traffic_state_entries"/>
-        <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="@string/network_traffic_color_style" android:key="network_traffic_color" android:defaultValue="\#ffffffff"/>
+        <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="@string/network_traffic_color_style" android:key="network_traffic_color" alphaSlider="true" android:defaultValue="\#ffffffff"/>
         <CheckBoxPreference android:title="@string/network_traffic_autohide" android:key="network_traffic_autohide" android:defaultValue="false" android:summary="@string/network_traffic_autohide_summary"/>
         <com.wubydax.romcontrol.prefs.SeekBarPreference android:title="@string/network_traffic_autohide_threshold" android:key="network_traffic_autohide_threshold" unitsRight="kB/s" min="0.0" unitsLeft="" android:dependency="network_traffic_autohide" android:max="100"/>
         <com.wubydax.romcontrol.prefs.MyListPreference android:entries="@array/traffic_entries" android:title="Traffic Position" android:key="trafficpos" android:defaultValue="0" android:entryValues="@array/traffic_values" />
@@ -41,7 +41,7 @@
     </PreferenceCategory>
     <PreferenceCategory android:title="Battery">
         <SwitchPreference android:title="Stock Battery" android:key="hide_battery_stock" android:defaultValue="true" android:summaryOn="Show" android:summaryOff="Hide" />
-        <SwitchPreference android:title="3Minit Battery(need some seconds)" android:key="minit_battery_visible" android:defaultValue="true" android:summaryOn="Show" android:summaryOff="Hide" />
+        <SwitchPreference android:title="3Minit Battery(need some seconds)" android:key="minit_battery_visible" android:defaultValue="false" android:summaryOn="Show" android:summaryOff="Hide" />
         <PreferenceScreen
             android:dependency="minit_battery_visible"
             android:summary="Custom battery chooser"
@@ -52,7 +52,7 @@
                 android:action="android.intent.action.MAIN" />
         </PreferenceScreen>
         <PreferenceScreen android:title="Battery Bar" android:summary="Display Line on top for battery">
-            <com.wubydax.romcontrol.prefs.MyListPreference android:entries="@array/battery_bar_entries" android:title="Battery Bar" android:key="battery_bar" android:summary="%s" android:defaultValue="1" android:entryValues="@array/battery_bar_values" />
+            <com.wubydax.romcontrol.prefs.MyListPreference android:entries="@array/battery_bar_entries" android:title="Battery Bar" android:key="battery_bar" android:summary="%s" android:defaultValue="0" android:entryValues="@array/battery_bar_values" />
             <SwitchPreference android:title="Battery bar animation" android:key="battery_bar_animate" android:defaultValue="true" android:summaryOn="Charging animation enabled" android:summaryOff="Animation disabled" />
             <com.wubydax.romcontrol.prefs.MyListPreference android:entries="@array/battery_bar_style_entries" android:title="Battery bar style" android:key="battery_bar_style" android:summary="%s" android:defaultValue="1" android:entryValues="@array/battery_bar_style_values" />
             <com.wubydax.romcontrol.prefs.MyListPreference android:entries="@array/battery_bar_thickness_entries" android:title="Thickness of battery bar" android:key="battery_bar_thickness" android:summary="%s" android:defaultValue="2" android:entryValues="@array/battery_bar_thickness_values" />

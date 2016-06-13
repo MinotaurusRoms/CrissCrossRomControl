@@ -1,5 +1,5 @@
 <resources>
-    <string name="defaultValue">1</string>
+    <string name="defaultValue">0</string>
     <string name="app_name">Rom Control</string>
     <string name="drawer_open">Menu opened</string>
     <string name="drawer_close">Menu closed</string>

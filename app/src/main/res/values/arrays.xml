@@ -2,6 +2,7 @@
 <resources>
     <array name="pulldown_drawables">
         <item>@drawable/tw_quick_panel_quick_setting_button_round_bg_normal</item>
+        <item>@drawable/tw_quick_panel_quick_setting_button_round_bg_normal_00</item>
         <item>@drawable/tw_quick_panel_quick_setting_button_round_bg_normal_01</item>
         <item>@drawable/tw_quick_panel_quick_setting_button_round_bg_normal_02</item>
         <item>@drawable/tw_quick_panel_quick_setting_button_round_bg_normal_03</item>
@@ -18,6 +19,7 @@
     </array>
     <string-array name="pulldown_entries">
         <item>Default</item>
+        <item>No</item>
         <item>Convex</item>
         <item>Concave</item>
         <item>Glass</item>
@@ -34,6 +36,7 @@
     </string-array>
     <string-array name="pulldown_values">
         <item>0</item>
+        <item>1</item>
         <item>2</item>
         <item>3</item>
         <item>4</item>
