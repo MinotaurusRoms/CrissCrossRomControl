@@ -156,8 +156,8 @@ public class NavigationDrawerFragment extends Fragment implements NavigationDraw
                 R.drawable.ic_notification,
                 R.drawable.ic_lockscreen,
                 R.drawable.ic_settings,
+                R.drawable.ic_touchwiz,
                 R.drawable.ic_links,
-                R.drawable.ic_settings,
                 R.drawable.ic_settings,
                 R.drawable.ic_settings};
         for (int i=0; i<mTitles.length && i<mIcons.length; i++){

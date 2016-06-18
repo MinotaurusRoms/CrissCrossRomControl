@@ -99,8 +99,8 @@ public class MainViewActivity extends AppCompatActivity
                 R.drawable.ic_notification,
                 R.drawable.ic_lockscreen,
                 R.drawable.ic_settings,
+                R.drawable.ic_touchwiz,
                 R.drawable.ic_links,
-                R.drawable.ic_settings,
                 R.drawable.ic_settings,
                 R.drawable.ic_settings};
         for (int i = 0; i < mTitles.length && i < mIcons.length; i++) {
@@ -133,9 +133,15 @@ public class MainViewActivity extends AppCompatActivity
                 getFragmentManager().beginTransaction().addToBackStack(null).replace(R.id.container, new LockscreenFragment()).commitAllowingStateLoss();
                 break;
             case 4:
-                getFragmentManager().beginTransaction().addToBackStack(null).replace(R.id.container, new PhonePrefsFragment()).commitAllowingStateLoss();
+                getFragmentManager().beginTransaction().addToBackStack(null).replace(R.id.container, new SecSettingsFragment()).commitAllowingStateLoss();
                 break;
             case 5:
+                getFragmentManager().beginTransaction().addToBackStack(null).replace(R.id.container, new TouwizLauncherFragment()).commitAllowingStateLoss();
+                break;
+            case 6:
+                getFragmentManager().beginTransaction().addToBackStack(null).replace(R.id.container, new PhonePrefsFragment()).commitAllowingStateLoss();
+                break;
+            case 7:
                 getFragmentManager().beginTransaction().addToBackStack(null).replace(R.id.container, new FrameworksGeneralFragment()).commitAllowingStateLoss();
                 break;
         }

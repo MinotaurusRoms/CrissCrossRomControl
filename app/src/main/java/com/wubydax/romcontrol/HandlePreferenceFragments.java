@@ -384,6 +384,18 @@ public class HandlePreferenceFragments implements SharedPreferences.OnSharedPref
                 } else {
                     l.setSummary("");
                 }
+                if (key.equals("doubletap")) {
+                    appRebootRequired("com.sec.android.app.launcher");
+                }
+                if (key.equals("swipe_up")) {
+                    appRebootRequired("com.sec.android.app.launcher");
+                }
+                if (key.equals("swipe_down")) {
+                    appRebootRequired("com.sec.android.app.launcher");
+                }
+                if (key.equals("tw_page_effect")) {
+                    appRebootRequired("com.sec.android.app.launcher");
+                }
                 break;
             case "MyEditTextPreference":
                 MyEditTextPreference et = (MyEditTextPreference) pf.findPreference(key);

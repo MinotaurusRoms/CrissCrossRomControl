@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.wubydax.romcontrol.prefs.FilePreference
+        android:title="Hide QuickSettings Favorites"
+        android:key="modcfg_hide_qs_favorites"
+        android:defaultValue="false"
+        android:summaryOn="Hidden"
+        android:summaryOff="Shown" />
+    <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Settings Favorites Listview Text Color" android:key="favs_text_color" android:summary="Choose favorites text color" android:defaultValue="\#ff000000" hexValue="true" alphaSlider="true" />
+    <com.wubydax.romcontrol.prefs.MyListPreference android:entries="@array/dashboard_fav_columns_entries" android:title="Amount of Columns in Settings Favorites Listview" android:key="favorite_columns" android:entryValues="@array/dashboard_fav_columns_values" />
+    <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Settings Listview Text Color" android:key="settings_sections_text_color" android:summary="Choose Sections text color" android:defaultValue="\#ff000000" hexValue="true" alphaSlider="true" />
+    <com.wubydax.romcontrol.prefs.MyListPreference android:entries="@array/dashboard_cat_columns_entries" android:title="Amount of Columns in Settings Listview" android:key="category_columns" android:entryValues="@array/dashboard_cat_columns_values" />
+</PreferenceScreen>
