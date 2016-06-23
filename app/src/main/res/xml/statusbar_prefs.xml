@@ -33,6 +33,36 @@
         <com.wubydax.romcontrol.prefs.SeekBarPreference android:title="@string/network_traffic_autohide_threshold" android:key="network_traffic_autohide_threshold" unitsRight="kB/s" min="0.0" unitsLeft="" android:dependency="network_traffic_autohide" android:max="100"/>
         <com.wubydax.romcontrol.prefs.MyListPreference android:entries="@array/traffic_entries" android:title="Traffic Position" android:key="trafficpos" android:defaultValue="0" android:entryValues="@array/traffic_values" />
     </PreferenceCategory>
+    <PreferenceCategory android:title="@string/dynamic_status_bar_title" >
+        <SwitchPreference
+            android:title="Dynamic StatusBar Color"
+            android:key="dynamic_toggle"
+            android:defaultValue="false"
+            android:summaryOn="Dynamic StatusBar features enabled"
+            android:summaryOff="Dynamic StatusBar features disabled" />
+        <com.wubydax.romcontrol.prefs.MyListPreference
+            android:entries="@array/dsb_gradient_filter_entries"
+            android:title="@string/dynamic_status_bar_gradient_title"
+            android:key="dynamic_status_bar_gradient_state"
+            android:dependency="dynamic_toggle"
+            android:summary="@string/dynamic_status_bar_gradient_summary"
+            android:defaultValue="2"
+            android:entryValues="@array/dsb_gradient_filter_values" />
+        <com.wubydax.romcontrol.prefs.MyListPreference
+            android:entries="@array/dsb_gradient_filter_entries"
+            android:title="@string/dynamic_status_bar_filter_title"
+            android:key="dynamic_status_bar_filter_state"
+            android:dependency="dynamic_toggle"
+            android:summary="@string/dynamic_status_bar_filter_summary"
+            android:defaultValue="2"
+            android:entryValues="@array/dsb_gradient_filter_values" />
+        <com.wubydax.romcontrol.prefs.SeekBarPreference
+            android:max="70"
+            android:title="@string/dynamic_status_bar_filter_value"
+            android:key="dynamic_status_bar_filter_value"
+            android:dependency="dynamic_toggle"
+            android:defaultValue="10" min="0" />
+    </PreferenceCategory>
     <PreferenceCategory android:title="Potatoe">
         <PreferenceScreen android:title="Gradient Statusbar" android:key="com.potato.gradientapp.MainActivity" android:summary="Set Statusbar Color" />
         <PreferenceScreen

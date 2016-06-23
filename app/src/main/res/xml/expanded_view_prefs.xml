@@ -1,19 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+    <PreferenceScreen android:title="Toggles"
+        android:summary="Customize toggles" >
+        <com.wubydax.romcontrol.prefs.MyListPreference android:entries="@array/toggle_entries" android:title="Visible Toggles Shown" android:key="QSPanel_NumberCount" android:summary="Number shown on screen" android:entryValues="@array/toggle_values" />
+        <com.wubydax.romcontrol.prefs.MyListPreference
+            android:entries="@array/toggle_scroll_entries"
+            android:title="Scrollable Toggles Shown"
+            android:key="sysui_qs_active_tiles"
+            android:summary="Scrolling toggle number"
+            android:defaultValue="10"
+            android:entryValues="@array/toggle_scroll_values" />
+        <com.wubydax.romcontrol.prefs.ThumbnailListPreference
+            android:key="toggle_buttons_background"
+            android:title="Toggle Buttons"
+            app:drawableArray="@array/pulldown_drawables"
+            app:entryDefault="@string/defaultValue"
+            app:entryList="@array/pulldown_entries"
+            app:entryValuesList="@array/pulldown_values" />
+        <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Toggle On Color" android:key="toggle_icon_on_color" android:defaultValue="\#ff000000" hexValue="true" alphaSlider="true" android:summary="Set toggle On color" />
+            <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Toggle Off Color" android:key="toggle_icon_off_color" android:defaultValue="\#ff373737" hexValue="true" alphaSlider="true" android:summary="Set toggle Off color" />
+    </PreferenceScreen>
     <PreferenceScreen android:title="Colors"
         android:summary="Customize colors" >
-        <PreferenceCategory android:title="Colors">
-            <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Toggle On Color" android:key="toggle_icon_on_color" android:defaultValue="\#ff000000" hexValue="true" alphaSlider="true" android:summary="Set toggle On color" />
-            <com.wubydax.romcontrol.prefs.ColorPickerPreference android:title="Toggle Off Color" android:key="toggle_icon_off_color" android:defaultValue="\#ff373737" hexValue="true" alphaSlider="true" android:summary="Set toggle Off color" />
-            <com.wubydax.romcontrol.prefs.ThumbnailListPreference
-                android:key="toggle_buttons_background"
-                android:title="Toggle Buttons"
-                app:drawableArray="@array/pulldown_drawables"
-                app:entryDefault="@string/defaultValue"
-                app:entryList="@array/pulldown_entries"
-                app:entryValuesList="@array/pulldown_values" />
-        </PreferenceCategory>
         <PreferenceCategory android:title="Theme related colors">
             <SwitchPreference android:title="On/Off Theme related colors" android:key="link_colors" android:summaryOn="Samsung Themes colors dont work" android:summaryOff="Samsung Theme colors work" />
             <com.wubydax.romcontrol.prefs.ColorPickerPreference android:dependency="link_colors" android:title="Toggle Circle Color" android:key="toggle_buttons_background_color" android:defaultValue="\#ffffffff" hexValue="true" alphaSlider="true" android:summary="Choose the color to toggle style Stock" />
@@ -36,7 +45,6 @@
         <SwitchPreference android:title="Mod clock" android:key="hide_header_mod_clock" android:summaryOn="Show" android:summaryOff="Hide" />
         <SwitchPreference android:title="Mod clock second" android:key="hide_header_mod_clock_second" android:dependency="hide_header_mod_clock" android:summaryOn="Show" android:summaryOff="Hide" />
     </PreferenceScreen>
-    <com.wubydax.romcontrol.prefs.MyListPreference android:entries="@array/toggle_entries" android:title="Visible Toggles Shown" android:key="QSPanel_NumberCount" android:summary="Number shown on screen" android:entryValues="@array/toggle_values" />
     <SwitchPreference android:title="Single swipe for Quickpanel" android:key="tweaks_qs_pulldown" android:defaultValue="true" android:summaryOn="Feature is enabled"
         android:summaryOff="Feature is disabled" />
     <PreferenceCategory android:title="Custom Notification Panel Background">
